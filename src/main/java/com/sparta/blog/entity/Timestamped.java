@@ -10,10 +10,10 @@ import java.time.LocalDateTime;
 
 @Getter
 @MappedSuperclass
-@EntityListeners(AuditingEntityListener.class)  // 작성, 수정 일시 쾅쾅
+@EntityListeners(AuditingEntityListener.class)
 public abstract class Timestamped {
 
-    @CreatedDate // 사용하면 자동으로 updatable = false옵션 적용
+    @CreatedDate
     private LocalDateTime createdAt;
 
     @LastModifiedDate

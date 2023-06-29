@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
-//@Setter
 @NoArgsConstructor
 @Table(name = "users")
 @Entity
@@ -14,7 +13,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)  // 유일한 옵션
+    @Column(nullable = false, unique = true)
     private String username;
 
     @Column(nullable = false)
