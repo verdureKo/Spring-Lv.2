@@ -1,4 +1,4 @@
-# BLOG-CRUD
+# BLOG-CRUD.V2
 Goal:  "회원가입, 로그인 기능이 추가된 나만의 항해 블로그 백엔드 서버 만들기"
 
 ---
@@ -11,7 +11,7 @@ Goal:  "회원가입, 로그인 기능이 추가된 나만의 항해 블로그 �
     - password는  `최소 8자 이상, 15자 이하이며 알파벳 대소문자(a~z, A~Z), 숫자(0~9)`로 구성되어야 한다.
     - DB에 중복된 username이 없다면 회원을 저장하고 Client 로 성공했다는 메시지, 상태코드 반환하기
 
-<img src="./res/lv2.png" width="500" alt="회원가입">
+   <img src="./res/lv2.png" width="750" alt="회원가입">
 
 2. 로그인 API
     - username, password를 Client에서 전달받기
@@ -19,7 +19,7 @@ Goal:  "회원가입, 로그인 기능이 추가된 나만의 항해 블로그 �
     - 로그인 성공 시, 로그인에 성공한 유저의 정보와 JWT를 활용하여 토큰을 발급하고, 
     발급한 토큰을 Header에 추가하고 성공했다는 메시지, 상태코드 와 함께 Client에 반환하기
 
-<img src="./res/lv2_2.png" width="500" alt="로그인">
+   <img src="./res/lv2_2.png" width="750" alt="로그인">
 
 ---
 
@@ -29,57 +29,57 @@ Goal:  "회원가입, 로그인 기능이 추가된 나만의 항해 블로그 �
     - 제목, 작성자명(username), 작성 내용, 작성 날짜를 조회하기
     - 작성 날짜 기준 내림차순으로 정렬하기
 
-<img src="./res/lv2_4.png" width="500" alt="전체조회">
-<img src="./res/lv2_8.png" width="500" alt="전체조회2">
+   <img src="./res/lv2_4.png" width="750" alt="전체조회">
+   <img src="./res/lv2_8.png" width="750" alt="전체조회2">
    
 2. 게시글 작성 API
     - 토큰을 검사하여, 유효한 토큰일 경우에만 게시글 작성 가능
     - 제목, 작성 내용을 저장하고
     - 저장된 게시글을 Client 로 반환하기(username은 로그인 된 사용자)
    
-   <img src="./res/lv2_3.png" width="500" alt="작성">
-   <img src="./res/lv2_9.png" width="500" alt="작성에러">
+   <img src="./res/lv2_3.png" width="750" alt="작성">
+   <img src="./res/lv2_9.png" width="750" alt="작성에러">
    
 3. 선택한 게시글 조회 API
     - 선택한 게시글의 제목, 작성자명(username), 작성 날짜, 작성 내용을 조회하기 
     (검색 기능이 아닙니다. 간단한 게시글 조회만 구현해주세요.)
    
-<img src="./res/lv2_5.png" width="500" alt="선택조회">
-<img src="./res/lv2_10.png" width="500" alt="선택조회에러">
+   <img src="./res/lv2_5.png" width="750" alt="선택조회">
+   <img src="./res/lv2_10.png" width="750" alt="선택조회에러">
 
 4. 선택한 게시글 수정 API
     - ~~수정을 요청할 때 수정할 데이터와 비밀번호를 같이 보내서 서버에서 비밀번호 일치 여부를 확인 한 후~~
     - 토큰을 검사한 후, 유효한 토큰이면서 해당 사용자가 작성한 게시글만 수정 가능
     - 제목, 작성 내용을 수정하고 수정된 게시글을 Client 로 반환하기
    
- <img src="./res/lv2_6.png" width="500" alt="수정">
- <img src="./res/lv2_11.png" width="500" alt="수정에러">
+   <img src="./res/lv2_6.png" width="750" alt="수정">
+   <img src="./res/lv2_11.png" width="750" alt="수정에러">
    
 5. 선택한 게시글 삭제 API  
     - ~~삭제를 요청할 때 비밀번호를 같이 보내서 서버에서 비밀번호 일치 여부를 확인 한 후~~
     - 토큰을 검사한 후, 유효한 토큰이면서 해당 사용자가 작성한 게시글만 삭제 가능
     - 선택한 게시글을 삭제하고 Client 로 성공했다는 메시지, 상태코드 반환하기
    
-<img src="./res/lv2_7.png" width="500" alt="삭제">
-<img src="./res/lv2_12.png" width="500" alt="삭제에러">
+   <img src="./res/lv2_7.png" width="750" alt="삭제">
+   <img src="./res/lv2_12.png" width="750" alt="삭제에러">
 
 ---
 
 ## Use Case
 
-<img src="./res/UseCase.PNG" width="500" alt="회원가입">
+   <img src="./res/UseCase.PNG" width="300" alt="회원가입">
 
 ---
 
 ## ERD
 
-<img src="./res/blogs.png" width="500" alt="ERD">
+   <img src="./res/blogs.png" width="300" alt="ERD">
 
 ---
 
 ## API 명세서
 
-<img src="./res/api명세.PNG" width="500" alt="ERD">
+   <img src="./res/api명세.PNG" width="750" alt="ERD">
 
 ---
 1. 처음 설계한 API 명세서에 변경사항이 있었나요?
