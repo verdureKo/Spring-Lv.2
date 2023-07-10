@@ -19,10 +19,11 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
 
+    // 회원가입 로직
     @Transactional
     public User signup(SignupRequestDto signupRequestDto) {
         String username = signupRequestDto.getUsername();
-        String password = passwordEncoder.encode(signupRequestDto.getPassword());
+        String password = passwordEncoder.encode(signupRequestDto.getPassword()); // 우가 암호화 적용
 
         if (userRepository.existsByUsername(username)) {
             throw new IllegalArgumentException("중복된 사용자가 존재합니다.");
@@ -32,6 +33,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    // 로그인 로직: 런타임 시 최적화 옵션 적용
     @Transactional(readOnly = true)
     public String login(LoginRequestDto loginRequestDto, HttpServletResponse response) {
         String username = loginRequestDto.getUsername();

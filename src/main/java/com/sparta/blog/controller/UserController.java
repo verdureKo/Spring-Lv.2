@@ -20,6 +20,7 @@ public class UserController {
 
     private final UserService userService;
 
+    // 회원가입 API
     @PostMapping("/signup")
     public ApiResult signup(@Valid @RequestBody SignupRequestDto signupRequestDto) {
         User user = userService.signup(signupRequestDto);
@@ -27,6 +28,7 @@ public class UserController {
     }
 
 
+    // 로그인 API
     @ResponseBody
     @PostMapping("/login")
     public ApiResult login(@RequestBody LoginRequestDto loginRequestDto, HttpServletResponse response) {

@@ -8,10 +8,9 @@ import lombok.ToString;
 @Getter
 @NoArgsConstructor
 @ToString
-public class ApiResult {
-
-    private String message;
-    private int statusCode;
+public class ApiResult {    // 결과 반환을 위한 DTO
+        private String message;  // 성공 메세지와
+        private int statusCode;  // 상태 코드를 반환
 
     @Builder
     public ApiResult(String message, int statusCode) {

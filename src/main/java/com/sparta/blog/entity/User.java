@@ -13,7 +13,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true)            // 유일한 삼촌으로 만들어줌
     private String username;
 
     @Column(nullable = false)

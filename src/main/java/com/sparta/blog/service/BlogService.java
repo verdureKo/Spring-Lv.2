@@ -24,6 +24,7 @@ public class BlogService {
     private final UserRepository userRepository;
     private final JwtUtil jwtUtil;
 
+    // 게시글 작성 로직
     public BlogResponseDto createLog(BlogRequestDto requestDto, HttpServletRequest request) {
 
         User user = checkToken(request);
@@ -37,6 +38,7 @@ public class BlogService {
         return new BlogResponseDto(blog);
     }
 
+    // 게시글 전체 조회 로직
     @Transactional
     public List<BlogResponseDto> getLogs() {
         List<Blog> blogs = blogRepository.findAllByOrderByModifiedAtDesc();
@@ -49,13 +51,15 @@ public class BlogService {
         return blogResponseDto;
     }
 
-    @Transactional(readOnly = true)
+    // 게시글 선택 조회 로직
+    @Transactional(readOnly = true) // 런타임 시 최적화 옵션: 읽기 전용 힌트를 해석할 수 없는 트랜잭션 관리자는 읽기 전용 트랜잭션을 요청할 때 예외를 throw하지 않고 조용히 힌트를 무시
     public BlogResponseDto getLog(Long id) {
         Blog blog = blogRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("아이디가 일치하지 않습니다."));
         return new BlogResponseDto(blog);
     }
 
+    // 게시글 수정 로직
     @Transactional
     public BlogResponseDto updateLog(Long id, BlogRequestDto requestDto, HttpServletRequest request) {
 
@@ -77,6 +81,7 @@ public class BlogService {
         return new BlogResponseDto(blog);
     }
 
+    // 게시글 삭제 로직
     @Transactional
     public void deleteLog(Long id, HttpServletRequest request) {
 

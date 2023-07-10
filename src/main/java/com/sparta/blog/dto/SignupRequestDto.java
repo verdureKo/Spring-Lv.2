@@ -8,11 +8,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class SignupRequestDto {
+public class SignupRequestDto {    // 회원가입 요청에서 필요한 정보를 담는 DTO + 유효성 옵션 적용
 
-    @NotBlank
-    @Size(min = 4, max = 10, message = "4자에서 10자")
-    @Pattern(regexp = "^[a-z0-9]*$",message = "알파벳 소문자(a~z), 숫자(0~9)")
+    @NotBlank                                                               // 공백안됨
+    @Size(min = 4, max = 10, message = "4자에서 10자")                        // 문자 수 제약
+    @Pattern(regexp = "^[a-z0-9]*$",message = "알파벳 소문자(a~z), 숫자(0~9)")  // 패턴 제약
     private String username;
 
     @NotBlank
