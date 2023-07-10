@@ -11,8 +11,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
-
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -26,8 +24,7 @@ public class UserService {
         String username = signupRequestDto.getUsername();
         String password = passwordEncoder.encode(signupRequestDto.getPassword());
 
-        Optional<User> checkUsername = userRepository.findByUsername(username);
-        if (checkUsername.isPresent()) {
+        if (userRepository.existsByUsername(username)) {
             throw new IllegalArgumentException("중복된 사용자가 존재합니다.");
         }
 

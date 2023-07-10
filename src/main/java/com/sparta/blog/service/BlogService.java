@@ -24,7 +24,6 @@ public class BlogService {
     private final UserRepository userRepository;
     private final JwtUtil jwtUtil;
 
-    @Transactional
     public BlogResponseDto createLog(BlogRequestDto requestDto, HttpServletRequest request) {
 
         User user = checkToken(request);
