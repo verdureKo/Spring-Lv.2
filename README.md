@@ -3,25 +3,20 @@
 
 [Notion 바로가기](https://www.notion.so/verdureko/Spring-Lv-2-56f847ca73f34fd691bbc29659018c0a)
 
----
 
 ## Use Case
 
    <img src="./res/UseCase.PNG" width="300" alt="회원가입">
 
----
-
 ## ERD
 
-   <img src="res/erd.png" width="300" alt="ERD">
+   <img src="res/erd.PNG" width="300" alt="ERD">
 
----
 
 ## API 명세서
 
    <img src="res/api.PNG" width="750" alt="ERD">
 
----
 1. 처음 설계한 API 명세서에 변경사항이 있었나요?
    변경 되었다면 어떤 점 때문 일까요? 첫 설계의 중요성에 대해 작성해 주세요! 
 - 튜터님이 알려주신 API URL 컨벤션에 따라 단수에서 복수로 변경하여 차후 엔티티를 추가 하더라도 유연하도록 하였습니다.
